@@ -17,7 +17,7 @@ export default function Menu() {
 
 const styles = StyleSheet.create({
     Menu:{
-        flex:1,
+        height:30,
         flexDirection:'row',
         backgroundColor:'#D2ABF0',
         alignItems: 'center',

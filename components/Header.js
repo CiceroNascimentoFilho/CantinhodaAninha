@@ -21,7 +21,7 @@ export default function Header() {
           flexDirection: 'row',
           alignItems:'center',
           justifyContent:'space-between',
-          
+          fontSize:'36',
         },
         imglogo:{
           height: 50,

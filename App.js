@@ -1,37 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { StyleSheet, Text, Image, View } from 'react-native';
-import Constants from 'expo-constants';
-import {FontAwesome5} from '@expo/vector-icons';
 
-import Header from './components/Header';
-import Menu from './components/Menu';
-import Feed from './components/Feed';
+import { NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
+import Home from './screem/Home';
+import Saias from './screem/Saias';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      
-      <Header/>
-      <Menu/>
-      <Feed/>
-      
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} options={{headerShown:false}}/>
+        <Stack.Screen name="Saias" component={Saias} options={ {headerShown:false}}/>
+      </Stack.Navigator>
 
-      
+    </NavigationContainer>
 
-    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#D2ABF0',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-
-
-});

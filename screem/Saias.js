@@ -63,5 +63,9 @@ export default function FeedSaias(){
         flex: 1,
         alignItems: 'center',
         justifyContent: 'space-between',
+      },
+      imgsaia:{
+        width:'100%',
+        height:undefined,
       }
     });

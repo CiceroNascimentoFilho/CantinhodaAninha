@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 
 export default function Menu({navigation}) {
@@ -9,11 +9,10 @@ export default function Menu({navigation}) {
         <View style={styles.Menu}>
         <TouchableOpacity onPress={()=> navigation.navigate('Saias')}>
           <Text style={styles.M1}>  Saias  </Text>{''}{''}
-          </TouchableOpacity>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate('Blusas')}>
           <Text style={styles.M2}>  Blusas  </Text>{''}{''}
-          <Text style={styles.M3}>  Vestidos  </Text>{''}{''}
-          <Text style={styles.M4}>  Calças  </Text>
-      
+        </TouchableOpacity>
       </View>
 
 )};

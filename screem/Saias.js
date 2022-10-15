@@ -1,71 +1,97 @@
-import React, { useEffect, useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, Image, View } from 'react-native';
-
-import Header from '../components/Header';
 import { FlatList } from 'react-native-gesture-handler';
 
-export default function FeedSaias(){
-  const Saias =[
+import Header from '../components/Header';
+
+export default function Saias() {
+    
+  const Saia = [
     {
       id:1,
-      titulo:"saia longa verde",
-      src:'https://github.com/CiceroNascimentoFilho/fotos/Saias/images.jpeg',
+      titulo:"Saia verde longa",
+      src:require('../assets/images/Saias/images.jpeg'),
       valor:"R$70,00",
-      //aspectRation:0.750,
+      aspectRatio:0.8,
   },
   {
       id:2,
-      titulo:"saia longa branca com estampa",
-      src:'https://github.com/CiceroNascimentoFilho/fotos/Saias/images1.jpeg',
+      titulo:"Saia branca com listras azuis",
+      src:require('../assets/images/Saias/images1.jpeg'),
       valor:"R$90,00",
-      aspectRation:1.159,
+      aspectRatio:0.8,
   },
   {
       id:3,
-      titulo:"Saia longa florida",
-      src:'https://github.com/CiceroNascimentoFilho/fotos/Saias/images2.jpeg',
+      titulo:"Saia preta mid",
+      src:require('../assets/images/Saias/images2.jpeg'),
       valor:"R$90,00",
-      aspectRation:0.981,
+      aspectRatio:0.667,
   },
-  ]
-    
-    
+  {
+    id:4,
+    titulo:"Saia cinza com bordado em baixo",
+    src:require('../assets/images/Saias/images3.jpeg'),
+    valor:"R$90,00",
+    aspectRatio:0.80,
+},
+{
+  id:5,
+  titulo:"Saia preta florida mid",
+  src:require('../assets/images/Saias/images4.jpeg'),
+  valor:"R$90,00",
+  aspectRatio:0.723,
+}
+  ];
+  
   function renderItem({item}){
-    return <View style={styles.saias}>
-      <Text style={styles.titulo}>{item.titulo}</Text>
-      <Image style={styles.imgsaia} aspectRation={item.aspectRation} source={item.src}/>
-      <Text style={styles.valor} >{item.valor}</Text>
-    </View>
+    return(
+      <View style={styles.SaiasHome}>
+          <View style={styles.estilosaia}>
+            <Text style={styles.titulo}>{item.titulo}</Text>
+            <Image style={styles.imgsaia} aspectRatio={item.aspectRatio} source={item.src}/>
+            <Text style={styles.valor}>{item.valor}</Text>
+          </View>
+      </View>
+    )
   }
   
-  
-   return (
+    return (
+    <View style={styles.Saia}>
       
-      <View style={styles.estilosaia}>
-        <StatusBar style="auto" />
-        <Header/>
-        <FlatList
-        data={Saias}
+      <Header style={styles.header}/>
+      <FlatList
+        data={Saia}
         renderItem={renderItem}
         keyExtractor={item=>item.id}
         horizontal
-        showsHorizontalScrollIndicator={false}
-          />
-        </View>
-            
-    )
-  
-    } ;
+        showsVerticalScrollIndicator={false}
+      />
+     </View>
+    
+)};
 
     const styles = StyleSheet.create({
+      Saia:{
+        flex:1,
+        alignItems:'center',
+        backgroundColor:'#fff',
+      },
+      SaiasHome:{
+        backgroundColor:"#D2ABF0",
+      },
       estilosaia: {
-        flex: 1,
+       
+        alignContent:'center',
+        justifyContent:'center',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        padding:20, 
       },
       imgsaia:{
-        width:'100%',
-        height:undefined,
+        height:'80%',
+        width:undefined,
+        justifyContent:'center',  
+        alignItems:'center',
+        borderRadius: 35,
       }
     });
